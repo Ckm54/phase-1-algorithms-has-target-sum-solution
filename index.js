@@ -1,5 +1,14 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const checkedNumbers = {}
+
+  for(const num of array){
+    const compliment = target - num
+    if(compliment in checkedNumbers) return true
+
+    checkedNumbers[num] = true
+  }
+  return false
 }
 
 /* 
